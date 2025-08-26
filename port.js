@@ -95,7 +95,7 @@ if (profileDescription) {
         if (charIndex < originalText.length) {
             profileDescription.textContent += originalText.charAt(charIndex);
             charIndex++;
-            setTimeout(typeText, 50);
+            setTimeout(typeText, 30);
         }
     }
     
