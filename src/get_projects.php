@@ -27,11 +27,6 @@ try {
                 <?php endif; ?>
                 <div class="project-overlay">
                     <div class="project-links">
-                        <?php if (!empty($project['live_link'])): ?>
-                            <a href="<?php echo htmlspecialchars($project['live_link']); ?>" target="_blank" class="project-link" title="Live Demo">
-                                <i class="fas fa-external-link-alt"></i>
-                            </a>
-                        <?php endif; ?>
                         <?php if (!empty($project['github_link'])): ?>
                             <a href="<?php echo htmlspecialchars($project['github_link']); ?>" target="_blank" class="project-link" title="GitHub">
                                 <i class="fab fa-github"></i>
@@ -64,11 +59,8 @@ try {
                 <?php endif; ?>
                 
                 <div class="project-actions">
-                    <?php if (!empty($project['live_link'])): ?>
-                        <a href="<?php echo htmlspecialchars($project['live_link']); ?>" target="_blank" class="btn btn-primary">Live Demo</a>
-                    <?php endif; ?>
                     <?php if (!empty($project['github_link'])): ?>
-                        <a href="<?php echo htmlspecialchars($project['github_link']); ?>" target="_blank" class="btn btn-secondary">View Code</a>
+                        <a href="<?php echo htmlspecialchars($project['github_link']); ?>" target="_blank" class="btn btn-primary">View Code</a>
                     <?php endif; ?>
                 </div>
             </div>

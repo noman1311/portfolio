@@ -16,16 +16,15 @@ if ($_POST) {
     $description = trim($_POST['description']);
     $category = trim($_POST['category']);
     $tech_stack = trim($_POST['tech_stack']);
-    $live_link = trim($_POST['live_link']);
     $github_link = trim($_POST['github_link']);
     
     if (empty($title) || empty($description)) {
         $error = 'Title and description are required.';
     } else {
         try {
-            $stmt = $pdo->prepare("INSERT INTO projects (title, description, category, tech_stack, live_link, github_link) VALUES (?, ?, ?, ?, ?, ?)");
+            $stmt = $pdo->prepare("INSERT INTO projects (title, description, category, tech_stack, github_link) VALUES (?, ?, ?, ?, ?)");
             
-            if ($stmt->execute([$title, $description, $category, $tech_stack, $live_link, $github_link])) {
+            if ($stmt->execute([$title, $description, $category, $tech_stack, $github_link])) {
                 $success = true;
             } else {
                 $error = 'Failed to add project. Please try again.';
@@ -104,16 +103,9 @@ if ($_POST) {
                         </div>
                     </div>
                     
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="live_link">Live Demo URL</label>
-                            <input type="url" id="live_link" name="live_link" placeholder="https://your-project.com" value="<?php echo htmlspecialchars($_POST['live_link'] ?? ''); ?>">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="github_link">GitHub URL</label>
-                            <input type="url" id="github_link" name="github_link" placeholder="https://github.com/username/repo" value="<?php echo htmlspecialchars($_POST['github_link'] ?? ''); ?>">
-                        </div>
+                    <div class="form-group">
+                        <label for="github_link">GitHub URL</label>
+                        <input type="url" id="github_link" name="github_link" placeholder="https://github.com/username/repo" value="<?php echo htmlspecialchars($_POST['github_link'] ?? ''); ?>">
                     </div>
                     
                     <div class="form-actions">

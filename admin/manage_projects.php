@@ -50,7 +50,7 @@ $projects = $pdo->query('SELECT * FROM projects ORDER BY id DESC')->fetchAll();
                                 <th>Title</th>
                                 <th>Category</th>
                                 <th>Tech Stack</th>
-                                <th>Links</th>
+                                <th>GitHub</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -68,11 +68,10 @@ $projects = $pdo->query('SELECT * FROM projects ORDER BY id DESC')->fetchAll();
                                 </td>
                                 <td><?php echo htmlspecialchars($project['tech_stack']); ?></td>
                                 <td>
-                                    <?php if ($project['live_link']): ?>
-                                        <a href="<?php echo htmlspecialchars($project['live_link']); ?>" target="_blank" class="link-btn">Live</a>
-                                    <?php endif; ?>
                                     <?php if ($project['github_link']): ?>
                                         <a href="<?php echo htmlspecialchars($project['github_link']); ?>" target="_blank" class="link-btn">GitHub</a>
+                                    <?php else: ?>
+                                        <span style="color: #999;">No link</span>
                                     <?php endif; ?>
                                 </td>
                                 <td>
