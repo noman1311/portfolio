@@ -51,6 +51,7 @@ if ($_POST) {
                 <li><a href="manage_projects.php">Manage Projects</a></li>
                 <li><a href="view_message.php">View Messages</a></li>
                 <li><a href="change_password.php">Change Password</a></li>
+                <li><a href="settings.php">Settings</a></li>
                 <li><a href="log_out.php">Logout</a></li>
             </ul>
         </nav>
