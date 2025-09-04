@@ -34,6 +34,7 @@ $recent_messages = $pdo->query('SELECT * FROM messages ORDER BY created_at DESC 
                 <li><a href="dashboard.php" class="active">Dashboard</a></li>
                 <li><a href="manage_projects.php">Manage Projects</a></li>
                 <li><a href="view_message.php">View Messages</a></li>
+                <li><a href="change_password.php">Change Password</a></li>
                 <li><a href="log_out.php">Logout</a></li>
             </ul>
         </nav>

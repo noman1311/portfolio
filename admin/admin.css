@@ -170,20 +170,30 @@ body {
     background-repeat: no-repeat;
 }
 
+/* Navigation Icons */
 .admin-nav a[href="dashboard.php"]::before {
     content: '📊';
+    margin-right: 10px;
 }
 
 .admin-nav a[href="manage_projects.php"]::before {
     content: '📁';
+    margin-right: 10px;
 }
 
 .admin-nav a[href="view_message.php"]::before {
     content: '💬';
+    margin-right: 10px;
+}
+
+.admin-nav a[href="change_password.php"]::before {
+    content: '🔑';
+    margin-right: 10px;
 }
 
 .admin-nav a[href="log_out.php"]::before {
     content: '🚪';
+    margin-right: 10px;
 }
 
 /* Main Content */

@@ -2,20 +2,26 @@
 // filepath: d:\Xampp\htdocs\portfolio\admin\index.php
 session_start();
 
-// Simple login credentials (you can change these)
-$admin_username = "admin";
-$admin_password = "password123";
+// Check if already logged in
+if (isset($_SESSION['admin_logged_in'])) {
+    header('Location: dashboard.php');
+    exit;
+}
+
+$error = '';
 
 if ($_POST) {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+    $username = $_POST['username'] ?? '';
+    $password = $_POST['password'] ?? '';
     
-    if ($username === $admin_username && $password === $admin_password) {
+    // Simple authentication (you can make this more secure)
+    if ($username === 'admin' && $password === 'admin123') {
         $_SESSION['admin_logged_in'] = true;
+        $_SESSION['admin_username'] = $username;
         header('Location: dashboard.php');
         exit;
     } else {
-        $error = "Invalid credentials!";
+        $error = 'Invalid username or password.';
     }
 }
 ?>
@@ -28,28 +34,23 @@ if ($_POST) {
 </head>
 <body>
     <div class="login-container">
-        <div class="login-form">
+        <form method="POST" class="login-form">
             <h2>Admin Login</h2>
-            <?php if (isset($error)): ?>
-                <div class="error-message"><?php echo $error; ?></div>
+            
+            <?php if ($error): ?>
+                <div class="error-message"><?php echo htmlspecialchars($error); ?></div>
             <?php endif; ?>
             
-            <form method="POST">
-                <div class="form-group">
-                    <input type="text" name="username" placeholder="Username" required>
-                </div>
-                <div class="form-group">
-                    <input type="password" name="password" placeholder="Password" required>
-                </div>
-                <button type="submit" class="login-btn">Login</button>
-            </form>
-            
-            <div class="login-info">
-                <p><strong>Default Login:</strong></p>
-                <p>Username: admin</p>
-                <p>Password: password123</p>
+            <div class="form-group">
+                <input type="text" name="username" placeholder="Username" required>
             </div>
-        </div>
+            
+            <div class="form-group">
+                <input type="password" name="password" placeholder="Password" required>
+            </div>
+            
+            <button type="submit" class="login-btn">Login</button>
+        </form>
     </div>
 </body>
 </html>
