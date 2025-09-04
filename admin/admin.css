@@ -1001,101 +1001,57 @@ body {
     animation: fadeIn 0.6s ease forwards;
 }
 
-/* Responsive Design */
-@media (max-width: 1200px) {
-    .dashboard-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .stats-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
+/* Management Section Styles */
+.management-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-@media (max-width: 768px) {
-    .dashboard-header {
-        flex-direction: column;
-        gap: 20px;
-        text-align: center;
-        padding: 25px;
-    }
-    
-    .header-actions {
-        align-items: center;
-    }
-    
-    .quick-actions {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .stats-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    
-    .stat-card {
-        padding: 25px;
-    }
-    
-    .dashboard-grid {
-        gap: 20px;
-    }
-    
-    .card-header {
-        padding: 20px 25px 15px;
-    }
-    
-    .card-content {
-        padding: 20px 25px 25px;
-    }
-    
-    .quick-actions-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .welcome-section h1 {
-        font-size: 24px;
-    }
-    
-    .current-time .time {
-        font-size: 20px;
-    }
+.management-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    transition: all 0.3s ease;
 }
 
-@media (max-width: 480px) {
-    .admin-main {
-        padding: 20px;
-    }
-    
-    .dashboard-header {
-        padding: 20px;
-        margin-bottom: 30px;
-    }
-    
-    .stat-card {
-        flex-direction: column;
-        text-align: center;
-        gap: 15px;
-    }
-    
-    .stat-icon {
-        font-size: 36px;
-    }
-    
-    .project-item,
-    .message-item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
-    
-    .message-item {
-        text-align: left;
-    }
-    
-    .action-item {
-        flex-direction: column;
-        text-align: center;
-    }
+.management-item:hover {
+    background: #e9ecef;
+    transform: translateX(5px);
+}
+
+.management-icon {
+    font-size: 24px;
+    line-height: 1;
+    margin-top: 5px;
+}
+
+.management-content {
+    flex: 1;
+}
+
+.management-content h4 {
+    color: #2c3e50;
+    margin: 0 0 8px 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.management-content p {
+    color: #6c757d;
+    margin: 0 0 15px 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.btn-success {
+    background: #28a745;
+    color: white;
+}
+
+.btn-success:hover {
+    background: #218838;
 }
